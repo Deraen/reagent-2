@@ -1,0 +1,9 @@
+{:source-paths ["src" "demo"]
+ :dev-http {8090 {:roots ["demo-resources/public" "target/shadow-cljs/client/public"]}}
+ :builds
+ {:client {:target :browser
+           :output-dir "target/shadow-cljs/client/public/js"
+           :asset-path "/js"
+           :modules {:main {:entries [reagent2.demo]}}
+           :devtools {:ignore-warnings true}}}
+ :dependencies [[reagent/reagent "1.0.0"]]}

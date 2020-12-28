@@ -1,0 +1,1 @@
+{:lint-as {reagent2.core/defnc clojure.core/defn}}
