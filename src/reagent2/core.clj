@@ -1,7 +1,8 @@
 (ns reagent2.core)
 
 (defmacro defnc [n bindings-vec & body]
-  `(defn ~n ~bindings-vec
+  `(defn ~n [props#]
      (reactive-wrapper
        (fn ~bindings-vec
-         ~@body))))
+         ~@body)
+       props#)))

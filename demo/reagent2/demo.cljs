@@ -7,11 +7,16 @@
 
 (defonce state (ra/atom 1))
 
+;; Defnc passes children from the props to the function
+(defnc test-c [props a b]
+  (d/div #js {}
+         a
+         b))
+
 (defnc main []
   (d/div
     #js {:className "foo"}
-    "hello world: "
-    @state
+    ($ test-c nil "hello-world" @state)
     (d/button
       #js {:onClick (fn [_e]
                       (js/console.log "click handler")
